@@ -5,7 +5,7 @@ const LoginPage = () => {
   return (
     <>
       <div className="background"></div>
-      <img src={logo} alt="Logo" className="logo" /> {/* Logo adicionado */}
+      <img src={logo} alt="Logo" className="logo" />
       <div className="modal">
         <div className="content">
           <div className="titlelogin">
@@ -13,11 +13,11 @@ const LoginPage = () => {
           </div>
           <div className="inputsdata">
             <div>
-              <label htmlFor="email">Seu email*</label>
+              <label htmlFor="email">Email*</label>
               <input id="email" type="email" />
             </div>
             <div>
-              <label htmlFor="password">Sua senha*</label>
+              <label htmlFor="password">Senha*</label>
               <input id="password" type="password" />
             </div>
             <div className="checkbox-container">
@@ -27,7 +27,7 @@ const LoginPage = () => {
           </div>
           <div className="button-container">
             <button>Entrar</button>
-            <p>Inscrever-se</p>
+            <p>Cadastre-se</p>
           </div>
         </div>
       </div>
