@@ -50,7 +50,7 @@ const LoginPage = () => {
             </div>
           </div>
           <div className="button-container">
-            <button>Entrar</button>
+            <button type="submit">Entrar</button>
             <p>Cadastre-se</p>
           </div>
         </div>
