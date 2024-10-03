@@ -29,8 +29,8 @@ html {
   align-items: center;
   justify-content: center;
   max-width: 90%;
-  width: 550px;
-  height: 500px;
+  width: 420px;
+  height: 400px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -47,7 +47,7 @@ html {
 
 .titlelogin {
   text-align: left;
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 20px;
 }
 
