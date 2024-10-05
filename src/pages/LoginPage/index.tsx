@@ -3,7 +3,7 @@ import "./style.css";
 import logo from "../../assets/img/logo.png";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import Button from "../../components/Button/button";
+import Button from "../../components/Button/Button";
 
 const schema = z.object({
   email: z
@@ -46,7 +46,7 @@ const LoginPage = () => {
               <div>
                 <label htmlFor="email">Email*</label>
                 <input id="email" type="email" {...register("email")} />
-                {errors.email && <p>{errors.email.message as string}</p>}
+                {errors.email && <p className="error-message">{errors.email.message as string}</p>}
               </div>
               <div>
                 <label htmlFor="password">Senha*</label>
@@ -55,7 +55,7 @@ const LoginPage = () => {
                   type="password"
                   {...register("password")}
                 />
-                {errors.password && <p>{errors.password.message as string}</p>}
+                {errors.password && <p className="error-message">{errors.password.message as string}</p>}
               </div>
               <div className="checkbox-container">
                 <input type="checkbox" id="remember" />
@@ -63,8 +63,8 @@ const LoginPage = () => {
               </div>
             </div>
             <div className="button-container">
-              <Button />
-              <p>Cadastre-se</p>
+              <Button value="Entrar"/>
+              <a href="/signup">Cadastre-se</a>
             </div>
           </form>
         </div>

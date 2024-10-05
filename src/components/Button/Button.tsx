@@ -1,7 +1,7 @@
 import "./style.css";
 
-const Button = () => {
-  return <button type="submit">Entrar</button>;
+const Button = ({value}: {value:string}) => {
+  return <button type="submit">{value}</button>;
 };
 
 export default Button;
