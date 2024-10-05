@@ -16,6 +16,11 @@ const schema = z.object({
     .nonempty("Esse campo é obrigatório"),
   date: z
     .string()
+    .nonempty("Esse campo é obrigatório"),
+  number: z
+    .string()
+    .min(11, "CPF inválido")
+    .max(11, "CPF inválido")
     .nonempty("Esse campo é obrigatório")
 });
 
@@ -73,8 +78,10 @@ const SignUpPage = () => {
                 <label htmlFor="cpf">CPF*</label>
                 <input
                   id="cpf"
-                  type="text"
+                  type="number"
+                  {...register("number")}
                 />
+                {errors.number && <p className="error-message">{errors.number.message as string}</p>}
               </div>
             </div>
             <div className="button-container">
