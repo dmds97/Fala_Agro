@@ -92,18 +92,20 @@ input[type="password"] {
   margin-top: 20px;
 }
 
-p {
+a {
   text-align: center;
+  text-decoration: none;
   color: blue;
   cursor: pointer;
 }
 
-p:hover {
+a:hover {
   text-decoration: underline;
 }
 
 .error-message {
   color: red;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  font-style: italic;
   margin-top: 5px;
 }
