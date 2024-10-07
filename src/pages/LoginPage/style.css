@@ -26,11 +26,12 @@ html {
 
 .modal {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   max-width: 90%;
-  width: 550px;
-  height: 500px;
+  width: 600px;
+  height: auto;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -47,7 +48,7 @@ html {
 
 .titlelogin {
   text-align: left;
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
@@ -67,7 +68,7 @@ label {
 input[type="email"],
 input[type="password"] {
   width: 100%;
-  padding: 18px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 7px;
   background-color: #f2f2f2;
@@ -94,12 +95,12 @@ button {
   width: 100%;
   max-width: 250px;
   padding: 12px;
-  background: linear-gradient(90deg, #5fb900 0%, #559a0d 100%);
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 60px;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 16px;
   margin-bottom: 10px;
 }
 
@@ -109,10 +110,18 @@ button:hover {
 
 p {
   text-align: center;
+  text-decoration: none;
   color: blue;
   cursor: pointer;
 }
 
-p:hover {
+a:hover {
   text-decoration: underline;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.75rem;
+  font-style: italic;
+  margin-top: 5px;
 }
