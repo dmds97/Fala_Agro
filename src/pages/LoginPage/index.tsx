@@ -47,7 +47,7 @@ const LoginPage = () => {
                 <label htmlFor="email">Email*</label>
                 <input id="email" type="email" {...register("email")} />
                 {errors.email && (
-                  <p className="error">{errors.email.message}</p>
+                  <p className="error-message">{errors.email.message}</p>
                 )}
               </div>
               <div>
@@ -58,7 +58,7 @@ const LoginPage = () => {
                   {...register("password")}
                 />
                 {errors.password && (
-                  <p className="error">{errors.password.message}</p>
+                  <p className="error-message">{errors.password.message}</p>
                 )}
               </div>
               <div className="checkbox-container">

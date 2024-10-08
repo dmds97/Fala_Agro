@@ -111,4 +111,5 @@ a:hover {
   font-size: 0.75rem;
   font-style: italic;
   margin-top: 5px;
+  cursor: auto;
 }
