@@ -68,7 +68,7 @@ const LoginPage = () => {
             </div>
             <div className="button-container">
               <button type="submit">Entrar</button>
-              <p>
+              <p className="link">
                 <Link to="/signup">Cadastre-se</Link>
               </p>
             </div>

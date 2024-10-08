@@ -1,4 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form";
+import { Link } from "react-router-dom"; // Importação do Link
 import "./style.css";
 import logo from "../../assets/img/logo.png";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -105,7 +106,7 @@ const SignUpPage = () => {
             <div className="button-container">
               <Button type="submit" value="Cadastrar" />
               <span>
-                Já possui uma conta? <a href="/">Faça login</a>
+                Já possui uma conta?  <Link to="/">Faça login</Link>
               </span>
             </div>
           </form>
