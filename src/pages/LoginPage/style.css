@@ -60,28 +60,44 @@ html {
   margin-bottom: 15px;
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 7px;
-  background-color: #f2f2f2;
-}
-
 .checkbox-container {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  position: relative;
 }
 
-.checkbox-container input {
+.checkbox-container input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
   margin-right: 10px;
+  position: relative;
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+  background-color: #4caf50;
+  border: 2px solid #4caf50;
+}
+
+.checkbox-container input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  width: 7px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+.checkbox-container input[type="checkbox"]:checked::after {
+  display: block;
 }
 
 .button-container {
@@ -91,37 +107,10 @@ input[type="password"] {
   margin-top: 20px;
 }
 
-button {
-  width: 100%;
-  max-width: 250px;
-  padding: 12px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 60px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-p {
-  text-align: center;
+a {
   text-decoration: none;
-  color: blue;
-  cursor: pointer;
 }
 
 a:hover {
   text-decoration: underline;
-}
-
-.error-message {
-  color: red;
-  font-size: 0.75rem;
-  font-style: italic;
-  margin-top: 5px;
 }

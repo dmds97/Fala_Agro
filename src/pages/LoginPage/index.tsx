@@ -1,5 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Link } from "react-router-dom"; // Importação do Link
+import { Link } from "react-router-dom";
 import "./style.css";
 import logo from "../../assets/img/logo.png";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -14,6 +14,7 @@ const schema = z.object({
     .string()
     .min(8, "Mínimo 8 caracteres")
     .nonempty("Esse campo é obrigatório"),
+  remember: z.boolean().optional(),
 });
 
 type LoginFormInputs = z.infer<typeof schema>;
@@ -47,7 +48,7 @@ const LoginPage = () => {
                 <label htmlFor="email">Email*</label>
                 <input id="email" type="email" {...register("email")} />
                 {errors.email && (
-                  <p className="error">{errors.email.message}</p>
+                  <p className="error-message">{errors.email.message}</p>
                 )}
               </div>
               <div>
@@ -58,17 +59,21 @@ const LoginPage = () => {
                   {...register("password")}
                 />
                 {errors.password && (
-                  <p className="error">{errors.password.message}</p>
+                  <p className="error-message">{errors.password.message}</p>
                 )}
               </div>
               <div className="checkbox-container">
-                <input type="checkbox" id="remember" />
+                <input
+                  type="checkbox"
+                  id="remember"
+                  {...register("remember")}
+                />
                 <label htmlFor="remember">Lembrar-me</label>
               </div>
             </div>
             <div className="button-container">
               <button type="submit">Entrar</button>
-              <p>
+              <p className="link">
                 <Link to="/signup">Cadastre-se</Link>
               </p>
             </div>
