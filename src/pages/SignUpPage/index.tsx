@@ -1,9 +1,11 @@
 import { useForm, SubmitHandler } from "react-hook-form";
+import { Link } from "react-router-dom";
 import "./style.css";
 import logo from "../../assets/img/logo.png";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import Button from "../../components/Button/Button";
+import Input from "../../components/Input/Input";
 
 const schema = z.object({
   email: z
@@ -62,50 +64,41 @@ const SignUpPage = () => {
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="inputsdata">
-              <div>
-                <label htmlFor="email">Email*</label>
-                <input id="email" type="email" {...register("email")} />
-                {errors.email && (
-                  <p className="error-message">{errors.email.message}</p>
-                )}
-              </div>
-              <div>
-                <label htmlFor="password">Senha*</label>
-                <input
-                  id="password"
-                  type="password"
-                  {...register("password")}
-                />
-                {errors.password && (
-                  <p className="error-message">{errors.password.message}</p>
-                )}
-              </div>
-              <div>
-                <label htmlFor="date">Data de Nascimento*</label>
-                <input id="date" type="date" {...register("date")} />
-                {errors.date && (
-                  <p className="error-message">{errors.date.message}</p>
-                )}
-              </div>
-              <div>
-                <label htmlFor="cpf">CPF*</label>
-                <input
-                  id="cpf"
-                  type="text"
-                  {...register("number")}
-                  onChange={handleCPFChange}
-                  maxLength={14}
-                  className="cpf-input"
-                />
-                {errors.number && (
-                  <p className="error-message">{errors.number.message}</p>
-                )}
-              </div>
+              <Input
+                label="Email*"
+                id="email"
+                type="email"
+                register={register("email")}
+                error={errors.email?.message}
+              />
+              <Input
+                label="Senha*"
+                id="password"
+                type="password"
+                register={register("password")}
+                error={errors.password?.message}
+              />
+              <Input
+                label="Data de Nascimento*"
+                id="date"
+                type="date"
+                register={register("date")}
+                error={errors.date?.message}
+              />
+              <Input
+                label="CPF*"
+                id="cpf"
+                type="text"
+                register={register("number")}
+                error={errors.number?.message}
+                onChange={handleCPFChange}
+                maxLength={14}
+              />
             </div>
             <div className="button-container">
               <Button type="submit" value="Cadastrar" />
               <span>
-                Já possui uma conta? <a href="/">Faça login</a>
+                Já possui uma conta? <Link to="/">Faça login</Link>
               </span>
             </div>
           </form>
