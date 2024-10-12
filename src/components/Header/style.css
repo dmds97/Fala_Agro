@@ -23,6 +23,11 @@ nav{
     
 }
 
+.search::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
 ul{
     display: flex;
     gap: 25px;
