@@ -4,6 +4,8 @@ import "./style.css";
 import logo from "../../assets/img/logo.png";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Input from "../../components/Input/Input";
+import Button from "../../components/Button/Button";
+import Checkbox from "../../components/Checkbox";
 import * as z from "zod";
 
 const schema = z.object({
@@ -61,20 +63,19 @@ const LoginPage = () => {
                 error={errors.password?.message}
               />
               </div>
-              <div className="checkbox-container">
-                <input
-                  type="checkbox"
-                  id="remember"
-                  {...register("remember")}
-                />
-                <label htmlFor="remember">Lembrar-me</label>
-              </div>
+              <Checkbox 
+                type="checkbox"
+                id="remember"
+                register={register("remember")}
+                htmlFor="remember"
+                value="Lembrar-me"
+              />
             </div>
             <div className="button-container">
-                <button type="submit">Entrar</button>
-            <p className="link">
-              <Link to="/signup">Cadastre-se</Link>
-            </p>
+              <Button type="submit" value="Entrar" />
+              <p className="link">
+                <Link to="/signup">Cadastre-se</Link>
+              </p>
             </div>
           </form>
         </div>
