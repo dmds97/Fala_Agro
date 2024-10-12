@@ -1,65 +1,11 @@
 import "./style.css";
-import logo from "../../assets/img/logo.png";  
-import { useState } from "react";
+import logo from "../../assets/img/logo.png";
+import Header from "../../components/Header";
 
 const HomePage = () => {
-  const [selectedMenu, setSelectedMenu] = useState<string>("");
-
-  const handleMenuClick = (menu: string) => {
-    setSelectedMenu(menu);
-  };
-
   return (
     <div className="homepage">
-      <header className="navbar">
-        <img src={logo} alt="Logo" className="logo" />
-        <div className="search-bar">
-          <input type="text" placeholder="Pesquisar..." />
-        </div>
-        <nav className="menu">
-          <ul>
-            <li>
-              <a 
-                href="/" 
-                className={selectedMenu === "Home" ? "active" : ""} 
-                onClick={() => handleMenuClick("Home")} 
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a 
-                href="/noticias" 
-                className={selectedMenu === "Notícias" ? "active" : ""} 
-                onClick={() => handleMenuClick("Notícias")}
-              >
-                Notícias
-              </a>
-            </li>
-            <li>
-              <a 
-                href="/eventos" 
-                className={selectedMenu === "Eventos" ? "active" : ""} 
-                onClick={() => handleMenuClick("Eventos")}
-              >
-                Eventos
-              </a>
-            </li>
-            <li>
-              <a 
-                href="/negocios" 
-                className={selectedMenu === "Negócios" ? "active" : ""} 
-                onClick={() => handleMenuClick("Negócios")}
-              >
-                Negócios
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div className="user-profile">
-          <a href="/login">Login</a>
-        </div>
-      </header>
+      <Header />
       <main className="feed">
         <div className="feed-item">
           <img src={logo} alt="Imagem de Notícia 1" />

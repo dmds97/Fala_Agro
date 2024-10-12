@@ -1,70 +1,9 @@
-.homepage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 5px 20px; 
-    background-color: #f8f8f8;
-  }
-  
-  .logo {
-    transform: translateY(-15px);
-  }
-  
-  .search-bar {
-    flex-grow: 1; 
-    display: flex;
-    justify-content: center;
-  }
-  
-  .search-bar input {
-    width: 300px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    background-color: #f2f2f2;
-  }
-  
-  .menu {
-    display: flex;
-    align-items: center;
-  }
-  
-  .menu ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin-right: 100px; 
-  }
-  
-  .menu ul li {
-    margin: 0 15px;
-  }
-  
-  .menu ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold; 
-  }
-  
-  .user-profile a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    margin-right: 20px;
-  }
-  
-  .feed {
+.feed {
     display: flex;
     flex-wrap: wrap;
+    padding: 50px;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     margin-top: 20px;
   }
   
