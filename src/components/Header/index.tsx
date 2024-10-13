@@ -1,28 +1,35 @@
 import { Link } from "react-router-dom";
-import user from "../../assets/user.png";
-import logo from "../../assets/simbolo-falaagro-1.png";
+import logo from "../../assets/img/logo.png";
+import user from "../../assets/icons/user.png";
+import icon from "../../assets/icons/simbolo-falaagro-1.png";
+import menu from "../../assets/icons/menu.png";
 import "./style.css";
 
 const Header = () => {
+    const menuItems:string[] = ["Home", "Noticias", "Eventos", "Negocios"];
+
     return (
-        <div>
-            <nav>
-                <img className="nav-logo" src={logo} alt="Fala Agro" />
+        <header>
+                <img className="menu" src={menu} alt="menu hamburger" />
+                <img className="nav-banner" src={logo} alt="Logo Fala Agro" />
+                <img className="nav-logo" src={icon} alt="Fala Agro" />
                 <input className="search" placeholder="Pesquisar..." type="search" name="search" id="search" />
+            <nav>
                 <ul>
-                    <li><Link className="nav-link" to="/home">Home</Link></li>
-                    <li><Link className="nav-link" to="/noticias">Noticias</Link></li>
-                    <li><Link className="nav-link" to="/eventos">Eventos</Link></li>
-                    <li><Link className="nav-link" to="/negocios">Negócios</Link></li>
+                    {menuItems.map(item => 
+                        <li>
+                            <Link 
+                                className="nav-link" 
+                                to={`/${item.toLocaleLowerCase()}`}>{item}
+                            </Link>
+                        </li>
+                    )}
                 </ul>
-                <div className="user-container">
-                    <div className="user-info">
-                        <img className="user-icon" src={user} alt="icone de usuario" />
-                    </div>
-                    <p className="user-name">usuario</p>
-                </div>
             </nav>
-        </div>
+            <div className="user-info">
+                <img className="user-icon" src={user} alt="icone de usuario" />
+            </div>
+        </header>
     )
 }
 
