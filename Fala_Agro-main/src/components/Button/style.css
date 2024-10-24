@@ -1,0 +1,16 @@
+button {
+  width: 100%;
+  max-width: 250px;
+  padding: 12px;
+  background: linear-gradient(90deg, #5fb900 0%, #559a0d 100%);
+  color: white;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
