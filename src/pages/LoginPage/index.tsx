@@ -1,8 +1,11 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import logo from "../../assets/img/logo.png";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Input from "../../components/Input/Input";
+import Button from "../../components/Button/Button";
+import Checkbox from "../../components/Checkbox";
 import * as z from "zod";
 
 const schema = z.object({
@@ -20,6 +23,8 @@ const schema = z.object({
 type LoginFormInputs = z.infer<typeof schema>;
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -30,7 +35,10 @@ const LoginPage = () => {
   });
 
   const onSubmit: SubmitHandler<LoginFormInputs> = (data) => {
+    // adicionar lógica de autenticação com o serviço
     console.log(data);
+
+    navigate("/home");
   };
 
   return (
@@ -45,34 +53,31 @@ const LoginPage = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="inputsdata">
               <div>
-                <label htmlFor="email">Email*</label>
-                <input id="email" type="email" {...register("email")} />
-                {errors.email && (
-                  <p className="error-message">{errors.email.message}</p>
-                )}
-              </div>
-              <div>
-                <label htmlFor="password">Senha*</label>
-                <input
+                <Input
+                  label="Email*"
+                  id="email"
+                  type="email"
+                  register={register("email")}
+                  error={errors.email?.message}
+                />
+                <Input
+                  label="Senha*"
                   id="password"
                   type="password"
-                  {...register("password")}
+                  register={register("password")}
+                  error={errors.password?.message}
                 />
-                {errors.password && (
-                  <p className="error-message">{errors.password.message}</p>
-                )}
               </div>
-              <div className="checkbox-container">
-                <input
-                  type="checkbox"
-                  id="remember"
-                  {...register("remember")}
-                />
-                <label htmlFor="remember">Lembrar-me</label>
-              </div>
+              <Checkbox
+                type="checkbox"
+                id="remember"
+                register={register("remember")}
+                htmlFor="remember"
+                value="Lembrar-me"
+              />
             </div>
             <div className="button-container">
-              <button type="submit">Entrar</button>
+              <Button type="submit" value="Entrar" />
               <p className="link">
                 <Link to="/signup">Cadastre-se</Link>
               </p>
